@@ -6,12 +6,11 @@
 /*   By: migenc <migenc@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 20:02:04 by migenc            #+#    #+#             */
-/*   Updated: 2023/10/14 20:16:16 by migenc           ###   ########.fr       */
+/*   Updated: 2023/10/25 19:17:38 by migenc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

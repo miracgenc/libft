@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: migenc <migenc@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/21 13:18:11 by migenc            #+#    #+#             */
-/*   Updated: 2023/10/21 16:43:50 by migenc           ###   ########.fr       */
+/*   Created: 2023/10/25 19:15:34 by migenc            #+#    #+#             */
+/*   Updated: 2023/10/25 19:15:37 by migenc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,15 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
+	size_t	i;
+
 	if (!dst && !src)
 		return (NULL);
-	if (n == 0)
-		return (dst);
-	while (n--)
+	i = 0;
+	while (i < n)
 	{
-		((unsigned char *) dst)[n] = ((unsigned char *) src)[n];
+		((unsigned char *) dst)[i] = ((unsigned char *) src)[i];
+		i++;
 	}
 	return (dst);
 }
-
-/* 
-
-int main()
-{
-	char dst[] = "1234";
-	const char *src = "asdfh";
-	size_t n = 5;
-	printf("%s", ft_memcpy(dst, "678910", 5));
-}
-
-*/ 

@@ -6,13 +6,13 @@
 /*   By: migenc <migenc@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 18:43:33 by migenc            #+#    #+#             */
-/*   Updated: 2023/10/24 18:46:39 by migenc           ###   ########.fr       */
+/*   Updated: 2023/10/25 15:30:48 by migenc           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count_digit(int n)
+static int	count(int n)
 {
 	int	c;
 
@@ -27,14 +27,14 @@ static int	ft_count_digit(int n)
 	return (c);
 }
 
-static int	ft_abs(int nbr)
+static int	negative(int nbr)
 {
 	if (nbr < 0)
 		return (-nbr);
 	return (nbr);
 }
 
-static void	ft_strrev(char *str)
+static void	rev(char *str)
 {
 	size_t	length;
 	size_t	i;
@@ -58,7 +58,7 @@ char	*ft_itoa(int n)
 	size_t	i;
 
 	is_neg = (n < 0);
-	str = (char *) malloc((ft_count_digit(n) + is_neg + 1) * sizeof(char));
+	str = (char *) malloc((count(n) + is_neg + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -69,12 +69,12 @@ char	*ft_itoa(int n)
 	}
 	while (n != 0)
 	{
-		str[i++] = '0' + ft_abs(n % 10);
+		str[i++] = '0' + negative(n % 10);
 		n /= 10;
 	}
 	if (is_neg)
 		str[i++] = '-';
 	str[i] = '\0';
-	ft_strrev(str);
+	rev(str);
 	return (str);
 }
